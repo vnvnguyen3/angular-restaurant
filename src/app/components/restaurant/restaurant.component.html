@@ -1,0 +1,8 @@
+<h2>Restaurants</h2>
+<ul class="restaurant">
+    <li *ngFor="let restaurant of restaurants">
+        <a routerLink="/detail/{{restaurant.id}}">
+            <div>{{restaurant.name}}</div>
+        </a>
+    </li>
+</ul>

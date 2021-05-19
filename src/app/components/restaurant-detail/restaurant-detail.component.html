@@ -1,7 +1,9 @@
-<div *ngIf="restaurant">
+<div *ngIf="restaurant" class="restaurant-detail">
     <h2>{{restaurant.name}}</h2>
     <div>{{restaurant.id}}</div>
     <div>{{restaurant.address}}</div>
     <div>{{restaurant.description}}</div>
+    <h3>Reviews</h3>
+    <app-review *ngFor="let review of reviews" [review]="review"></app-review>
 </div>
 <button (click)="goBack()">go back</button>

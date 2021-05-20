@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
     userName: '',
     password: '',
     firstName: '',
-    lastName: ''
+    lastName: '',
+    email: ''
   };
   submitted = false;
 
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() { 
     this.submitted = true; 
-    this.user = this.users.filter(user => user.userName === this.user.userName && user.password === this.user.password)[0]
+    this.user = this.users.filter(user => user.userName === this.user.userName && user.password === this.user.password)[0];
   }
 
 }

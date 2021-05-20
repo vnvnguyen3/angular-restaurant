@@ -10,6 +10,13 @@ import { RestaurantService } from '../../services/restaurant.service';
 export class RestaurantComponent implements OnInit {
 
   restaurants: Restaurant[] = [];
+  restaurant = {
+    id: 0,
+    name: '',
+    address: '',
+    description: ''
+  }
+  submitted = false;
 
   constructor(private restaurantService: RestaurantService) { }
 
@@ -21,4 +28,8 @@ export class RestaurantComponent implements OnInit {
     this.restaurantService.getRestaurants().subscribe(restaurants => this.restaurants = restaurants);
   }
 
+  onSubmit(){
+    this.submitted = true;
+    this.restaurantService.addRestaurant(this.restaurant as Restaurant).subscribe(restaurant => this.restaurant = restaurant);
+  }
 }
